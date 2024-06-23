@@ -1,4 +1,3 @@
-
 #Insersao de dados na tela
 puts "Ola Mundo"
 
@@ -33,7 +32,7 @@ puts "Olá #{nome}"
 puts "Bem Vindo ao Bar #{nome}, informe sua idade"
 idade = gets.chomp.to_i
 
-if (idade >= 18) then
+if (idade >= 18)
   puts "Pode entrar"
 else
   puts "Você não tem idade suficiente"
