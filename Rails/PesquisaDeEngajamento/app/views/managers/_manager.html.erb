@@ -1,0 +1,16 @@
+<div id="<%= dom_id manager %>">
+  <p>
+    <strong>Nome:</strong>
+    <%= manager.name %>
+  </p>
+  
+  <p>
+    <strong>Departamento:</strong>
+    <% if manager.department %>
+      <%= manager.department.name %>
+    <% else %>
+      Nenhum Departamento Associado
+    <% end %>
+  </p>
+
+</div>
