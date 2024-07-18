@@ -1,27 +1,27 @@
 <%= form_with(model: department) do |form| %>
-  <% if department.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(department.errors.count, "error") %> prohibited this department from being saved:</h2>
+    <% if department.errors.any? %>
+      <div style="color: red" >
+        <h2><%= pluralize(department.errors.count, "error") %> prohibited this department from being saved:</h2>
 
-      <ul>
-        <% department.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% department.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div>
+      <div class="form-group col-md-6">
+        <%= form.label :nome, style: "display: block" %>
+        <%= form.text_field :name, class: "form-control" %>
+      </div>
+
+      <div class="form-group col-md-6">
+        <%= form.label :manager_id, "Gerente" %>
+        <%= form.select :manager_id, Manager.all.map { |m| [m.name, m.id] }, {}, { class: "form-control", prompt: "Select Manager" } %>  
+      </div>
     </div>
-  <% end %>
-
-  <div >
-    <%= form.label :name, style: "display: block" , class:"form-control"%>
-    <%= form.text_field :name , class:"form-control"%>
-  </div>
-
-  <div>
-    <%= form.label :manager_id, "Gerente" , class:"form-control" %>
-    <%= form.select :manager_id, Manager.all.map { |m| [m.name, m.id] }, {}, { prompt: "Select Manager" } %>  
-  </div>
-  
-  <div>
-    <%= form.submit %>
-  </div>
+    <div>
+      <%= form.submit "Salvar", class:"btn btn-primary"%>
+    </div>
 <% end %>

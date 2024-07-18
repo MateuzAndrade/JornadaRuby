@@ -1,12 +1,17 @@
 <div id="<%= dom_id department %>">
-  <p>
-    <strong>Name:</strong>
-    <%= department.name %>
-  </p>
-
-  <p>
-    <strong>Manager:</strong>
-    <%= department.manager.name %>
-  </p>
-
+  <table class="table table-striped">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Manager</th>
+    </tr>
+    <tbody>
+      <% @departments.each do |department| %>
+        <tr>
+          <td scope="row"><%= department.name %></td>
+          <td scope="row"><%= department.manager.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
+
