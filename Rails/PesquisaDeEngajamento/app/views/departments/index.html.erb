@@ -1,14 +1,18 @@
 <p style="color: green"><%= notice %></p>
-
 <h1>Departmentos</h1>
-
 <div id="departments">
-  <% @departments.each do |department| %>
-    <%= render department %>
-    <p>
-      <%= link_to "Ver departamento", department %>
-    </p>
-  <% end %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Manager</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @departments.each do |department| %>
+        <%= render partial: 'department', locals: { department: department } %>
+      <% end %>
+    </tbody>
+  </table>
 </div>
-
 <%= link_to "Novo departmento", new_department_path %>
