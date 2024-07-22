@@ -1,16 +1,9 @@
-<div id="<%= dom_id manager %>">
-  <p>
-    <strong>Nome:</strong>
-    <%= manager.name %>
-  </p>
-  
-  <p>
-    <strong>Departamento:</strong>
-    <% if manager.department %>
-      <%= manager.department.name %>
-    <% else %>
-      Nenhum Departamento Associado
-    <% end %>
-  </p>
-
-</div>
+<tr id="<%= dom_id manager %>">
+  <td scope="row"><%=manager.name%></td>
+  <td scope="row">
+    <% if manager.department%>
+      <%=manager.department.name%></td>
+  <% else%>
+    Nenhum Departamento Associado
+  <%end%>
+</tr>

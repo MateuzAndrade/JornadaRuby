@@ -1,10 +1,16 @@
-<h1>Editar departmento</h1>
-
-<%= render "form", department: @department %>
-
-<br>
-
-<div>
-  <%= link_to "Ver departmento", @department %> |
-  <%= link_to "Voltar", departments_path %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card-body">
+        <h1 class="text-center">Editar Departamento</h1>
+        <%= render "form", department: @department %>
+        <br>
+        <div class="text-center">
+          <%= link_to "Ver", @department, class: "btn btn-primary" %>
+          <%= button_to "Apagar", @department, method: :delete, class:"btn btn-danger" %>
+          <%= link_to "Voltar", departments_path, class: "btn btn-secondary" %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
