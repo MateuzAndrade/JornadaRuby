@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "@floating-ui/dom": "^1.6.7",
-    "@popperjs/core": "^2.11.8",
-    "bootstrap": "5.0.2"
-  }
-}
